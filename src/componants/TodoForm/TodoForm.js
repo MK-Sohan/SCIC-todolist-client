@@ -11,7 +11,7 @@ const TodoForm = () => {
       name: name,
       description: description,
     };
-    fetch("http://localhost:5000/postTodo", {
+    fetch("https://infinite-spire-80356.herokuapp.com/postTodo", {
       method: "POST",
       body: JSON.stringify(info),
       headers: {
@@ -36,7 +36,7 @@ const TodoForm = () => {
   }, [name, description]);
   return (
     <div className="pt-20">
-      <h1 className="text-center text-4xl text-green-500 mb-5">
+      <h1 className="text-center text-4xl text-gray-600 mb-5 font-bold">
         Add Your Task Here
       </h1>
       <div className="flex  justify-center ">
@@ -68,12 +68,6 @@ const TodoForm = () => {
                   onChange={(event) => setDescription(event.target.value)}
                 />
               </div>
-
-              {/* <input
-              className="btn w-full max-w-xs text-white mt-4"
-              type="submit"
-              value="Submit"
-            /> */}
             </form>
           </div>
         </div>

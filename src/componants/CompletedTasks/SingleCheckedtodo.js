@@ -2,7 +2,7 @@ import React from "react";
 
 const SingleCheckedtodo = ({ value }) => {
   return (
-    <div className=" mr-5 mb-10 mt-7 ">
+    <div className=" lg:mr-5 mb-10 mt-7 ">
       <div class="card card-side bg-gray-100 shadow-xl">
         <div class="card-body">
           <h2 class="card-title">

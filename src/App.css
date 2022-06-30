@@ -27,7 +27,16 @@
 .App-link {
   color: #61dafb;
 }
-
+.back {
+  background-image: linear-gradient(
+      rgba(182, 187, 182, 0.588),
+      rgba(166, 170, 166, 0.588)
+    ),
+    url("../../image/keyboard-stationery-flat-lay.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

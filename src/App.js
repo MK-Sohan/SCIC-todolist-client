@@ -12,7 +12,7 @@ import EditTodo from "./componants/EditTodo/EditTodo";
 import Calender from "./componants/calender/Calender";
 function App() {
   return (
-    <div className="bg-slate-200">
+    <div className="bg-slate-200 back overflow-x-hidden">
       <StandardNavMenu></StandardNavMenu>
       <Routes>
         <Route path="/" element={<Home></Home>} />

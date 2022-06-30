@@ -19,7 +19,7 @@ const StandardNavMenu = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className="flex items-center sticky top-0 h-20 px-6 justify-between lg:justify-between   bg-[#ffc532] text-white  z-50">
+    <div className="flex items-center sticky top-0 h-20 px-6 justify-between lg:justify-between   bg-[#D2EB95] text-white  z-50">
       <div className="h-60 w-60">
         {/* <img src={logo} className="h-60 w-60" /> */}
       </div>
@@ -96,7 +96,7 @@ const StandardNavMenu = () => {
             </Link>
 
             <Link
-              to="/"
+              to="/completetask"
               className="no-underline px-2 mr-3 text-gray-200 font-bold
             text-xl hover:text-white"
             >
@@ -107,7 +107,7 @@ const StandardNavMenu = () => {
               Completed Tasks
             </Link>
             <Link
-              to="/"
+              to="/todo"
               className="no-underline px-2 mr-3 text-gray-200 font-bold
             text-xl hover:text-white"
             >
@@ -115,7 +115,7 @@ const StandardNavMenu = () => {
               To-Do
             </Link>
             <Link
-              to="/"
+              to="/calender"
               className="no-underline px-2 mr-3 text-gray-200 font-bold
             text-xl hover:text-white"
             >

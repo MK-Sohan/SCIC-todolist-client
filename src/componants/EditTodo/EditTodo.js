@@ -17,7 +17,7 @@ const EditTodo = () => {
       name: data.name,
       description: data.description,
     };
-    fetch(`http://localhost:5000/updatetodo/${todoid}`, {
+    fetch(`https://infinite-spire-80356.herokuapp.com/updatetodo/${todoid}`, {
       method: "PUT",
       body: JSON.stringify(info),
       headers: {
@@ -30,7 +30,7 @@ const EditTodo = () => {
         console.log(data);
         reset();
         toast("Your To-Do List Updted");
-        navigate("/");
+        navigate("/todo");
       });
   };
   return (

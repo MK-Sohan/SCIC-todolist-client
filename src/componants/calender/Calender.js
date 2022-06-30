@@ -10,8 +10,8 @@ const Calender = () => {
     footer = <p>You picked {format(selected, "PP")}.</p>;
   }
   return (
-    <div className="h-screen flex justify-center items-center">
-      <div className="bg-gray-100 shadow-xl rounded-sm ">
+    <div className=" h-screen flex justify-center items-center">
+      <div className="p-3 bg-gray-100 shadow-xl rounded-sm ">
         <DayPicker
           className="p-10"
           mode="single"

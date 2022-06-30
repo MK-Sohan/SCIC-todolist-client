@@ -13,7 +13,7 @@ const SingleMaintodos = ({ value }) => {
       description: value.description,
     };
     console.log(id);
-    fetch(`http://localhost:5000/completetodo/${id}`, {
+    fetch(`https://infinite-spire-80356.herokuapp.com/completetodo/${id}`, {
       method: "PUT",
       body: JSON.stringify(info),
       headers: {
@@ -27,8 +27,8 @@ const SingleMaintodos = ({ value }) => {
     navigate("/edittodo/" + id);
   };
   return (
-    <div className=" mr-5 mb-10 mt-7">
-      <div class="card w-96 bg-gray-100 shadow-xl">
+    <div className=" lg:mr-5 mb-10 mt-7 ">
+      <div class="card w-full bg-gray-100 shadow-xl ">
         <div className="flex justify-between items-center ">
           <div
             onClick={() => handleEdit(value._id)}
