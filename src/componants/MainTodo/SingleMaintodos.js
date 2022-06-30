@@ -39,14 +39,14 @@ const SingleMaintodos = ({ value }) => {
           {check ? (
             <button
               onClick={() => handleCheck(value._id)}
-              className="btn btn-xs mr-2 bg-red-600 border-none"
+              className="btn btn-xs mr-2 bg-green-600 border-none hidden"
             >
               <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
             </button>
           ) : (
             <button
               onClick={() => handleCheck(value._id)}
-              className="btn btn-xs mr-2 bg-green-400 border-none"
+              className="btn btn-xs mr-2 bg-green-400 border-none "
             >
               <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
             </button>

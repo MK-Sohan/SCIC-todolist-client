@@ -1,6 +1,9 @@
 import React from "react";
 
 const Footer = () => {
+  let newDate = new Date();
+  let updatedYear = newDate.getFullYear();
+
   return (
     <div className="bg-[#ffc532]">
       <div className="mx-auto container py-16 xl:px-20 lg:px-12 sm:px-6 px-4">
@@ -21,7 +24,7 @@ const Footer = () => {
               </svg>
             </div>
             <p className="text-sm leading-none text-gray-800 mt-4">
-              Copyright © 2022 MK.Sohan
+              Copyright © {updatedYear} MK.Sohan
             </p>
             <p className="text-sm leading-none text-gray-800 mt-4">
               All rights reserved
