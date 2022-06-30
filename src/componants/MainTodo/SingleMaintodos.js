@@ -6,23 +6,22 @@ import { useNavigate } from "react-router-dom";
 const SingleMaintodos = ({ value }) => {
   const [check, setCheck] = useState(false);
   const navigate = useNavigate();
-  const handleCheck = () => {
+  const handleCheck = (id) => {
     setCheck((value) => !value);
     const info = {
       name: value.name,
       description: value.description,
     };
-
-    fetch("http://localhost:5000/completetodo", {
-      method: "POST",
+    console.log(id);
+    fetch(`http://localhost:5000/completetodo/${id}`, {
+      method: "PUT",
       body: JSON.stringify(info),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
       .then((response) => response.json())
-      .then((json) => console.log(json));
-    toast.success("Todo Added");
+      .then((json) => toast.success("Todo Added"));
   };
   const handleEdit = (id) => {
     navigate("/edittodo/" + id);
@@ -39,15 +38,17 @@ const SingleMaintodos = ({ value }) => {
           </div>
           {check ? (
             <button
-              disabled
-              onClick={handleCheck}
-              className="btn btn-xs mr-2 bg-green-700"
+              onClick={() => handleCheck(value._id)}
+              className="btn btn-xs mr-2 bg-red-600 border-none"
             >
               <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
             </button>
           ) : (
-            <button onClick={handleCheck} className="btn btn-xs mr-2">
-              <FontAwesomeIcon icon={faAdd}></FontAwesomeIcon>
+            <button
+              onClick={() => handleCheck(value._id)}
+              className="btn btn-xs mr-2 bg-green-400 border-none"
+            >
+              <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
             </button>
           )}
         </div>
