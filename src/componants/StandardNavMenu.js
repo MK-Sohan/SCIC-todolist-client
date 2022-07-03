@@ -15,19 +15,20 @@ import {
   faClipboardCheck,
   faCalendarCheck,
 } from "@fortawesome/free-solid-svg-icons";
+import Toggle from "./Darkmode/toggle";
 const StandardNavMenu = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className="flex items-center sticky top-0 h-20 px-6 justify-between lg:justify-between   bg-[#D2EB95] text-white  z-50">
+    <div className="flex items-center sticky top-0 h-20 px-6 justify-between lg:justify-between   bg-[#D2EB95]  text-white  z-50">
       <div className="h-60 w-60">
         {/* <img src={logo} className="h-60 w-60" /> */}
       </div>
-      <div className="flex-1 justify-center items-center hidden lg:flex ">
+      <div className="flex-1 justify-center items-center hidden lg:flex  ">
         <Link
           to="/"
-          className="no-underline px-2 mr-3 text-gray-700 font-bold
-            text-xl hover:text-white"
+          className="no-underline px-2 mr-3  text-gray-700 font-bold
+            text-xl hover:text-gray-500"
         >
           <FontAwesomeIcon icon={faHome} className=" mr-2" />
           Home
@@ -35,30 +36,31 @@ const StandardNavMenu = () => {
 
         <Link
           to="/completetask"
-          className="no-underline px-2 mr-3 text-gray-700 font-bold
-            text-xl hover:text-white"
+          className="no-underline  px-2 mr-3 text-gray-700 font-bold
+            text-xl hover:text-gray-500"
         >
           <FontAwesomeIcon className=" mr-2" icon={faClipboardCheck} />
           Completed Tasks
         </Link>
         <Link
           to="/todo"
-          className="no-underline px-2 mr-3 text-gray-700 font-bold
-            text-xl hover:text-white"
+          className="no-underline px-2 mr-3  text-gray-700 font-bold
+            text-xl hover:text-gray-500"
         >
           <FontAwesomeIcon icon={faDashboard} className=" mr-2" />
           To-Do
         </Link>
         <Link
           to="/calender"
-          className="no-underline px-2 mr-3 text-gray-700 font-bold
-            text-xl hover:text-white"
+          className="no-underline px-2 mr-3  text-gray-700 font-bold
+            text-xl hover:text-gray-500"
         >
           <FontAwesomeIcon icon={faCalendarCheck} className=" mr-2" />
           Calendar
         </Link>
       </div>
       <div className="items-center hidden lg:flex  ">
+        {/* <Toggle></Toggle> */}
         <Button
           className=" text-black bg-green-500 bottom-1   hover:bg-white hover:text-black"
           text="Log in"
@@ -74,7 +76,7 @@ const StandardNavMenu = () => {
 
         <FontAwesomeIcon
           icon={faBell}
-          className="ml-6 text-2xl cursor-pointer text-gray-700"
+          className="ml-6 text-2xl cursor-pointer  text-gray-700"
         />
       </div>
 

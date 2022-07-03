@@ -3,8 +3,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faCheck, faAdd } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-const SingleMaintodos = ({ value }) => {
+const SingleMaintodos = ({ value, setDeletetodo, refetch }) => {
+  //   const data = window.localStorage.getItem("check");
+  //   console.log(data);
+  //   setCheck(data);
+  // }, []);
+  // useEffect(() => {
+  //   window.localStorage.setItem("check", JSON.stringify(check));
+  // }, [check]);
   const [check, setCheck] = useState(false);
+  const [reload, setReload] = useState(false);
   const navigate = useNavigate();
   const handleCheck = (id) => {
     setCheck((value) => !value);
@@ -21,8 +29,12 @@ const SingleMaintodos = ({ value }) => {
       },
     })
       .then((response) => response.json())
-      .then((json) => toast.success("Todo Added"));
+      .then((json) => {
+        toast.success("Todo Added");
+        refetch();
+      });
   };
+
   const handleEdit = (id) => {
     navigate("/edittodo/" + id);
   };
@@ -55,6 +67,10 @@ const SingleMaintodos = ({ value }) => {
 
         <div class="card-body">
           <h2 class="card-title">
+            <span className="text-green-400">Date: </span>
+            {value.selecte}
+          </h2>
+          <h2 class="card-title">
             <span className="text-green-400">To-Do Name:</span>
             {value.name}
           </h2>
@@ -63,6 +79,14 @@ const SingleMaintodos = ({ value }) => {
             <span className="text-green-400 font-bold">Description:</span>{" "}
             {value.description}
           </p>
+
+          <label
+            onClick={() => setDeletetodo(value)}
+            for="todo-delete-modal"
+            class="btn btn-sm btn-outline btn-error w-20 mt-5"
+          >
+            Remove
+          </label>
         </div>
       </div>
     </div>

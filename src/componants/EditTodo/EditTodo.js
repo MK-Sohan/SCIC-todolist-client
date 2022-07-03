@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-
+import { useQuery } from "react-query";
 const EditTodo = () => {
   const navigate = useNavigate();
   const { todoid } = useParams();
@@ -33,6 +33,14 @@ const EditTodo = () => {
         navigate("/todo");
       });
   };
+
+  const { data: singlevalue } = useQuery("singaldata", () =>
+    fetch(
+      `https://infinite-spire-80356.herokuapp.com/singleTodo/${todoid}`
+    ).then((res) => res.json())
+  );
+  console.log(singlevalue);
+
   return (
     <div className="h-screen">
       <div className="h-full  w-full  px-4">
@@ -54,9 +62,10 @@ const EditTodo = () => {
 
                 <input
                   aria-label="enter email adress"
+                  defaultValue={singlevalue?.name}
                   role="input"
                   type="text"
-                  className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
+                  className="bg-gray-200 text-xl border rounded focus:outline-none  font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
                   {...register("name", {
                     required: {
                       value: true,
@@ -76,11 +85,12 @@ const EditTodo = () => {
                 <lable className="text-sm font-medium leading-none text-gray-800">
                   Description
                 </lable>
-                <input
+                <textarea
                   aria-label="enter email adress"
                   role="input"
+                  defaultValue={singlevalue?.description}
                   type="text"
-                  className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
+                  className="bg-gray-200 border rounded focus:outline-none text-xl font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
                   {...register("description", {
                     required: {
                       value: true,

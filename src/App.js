@@ -10,9 +10,10 @@ import "react-toastify/dist/ReactToastify.css";
 import CompletedTasks from "./componants/CompletedTasks/CompletedTasks";
 import EditTodo from "./componants/EditTodo/EditTodo";
 import Calender from "./componants/calender/Calender";
+import FourOFour from "./componants/FouroFour/FourOFour";
 function App() {
   return (
-    <div className="bg-slate-200 back overflow-x-hidden">
+    <div className=" bg-slate-200 back overflow-x-hidden">
       <StandardNavMenu></StandardNavMenu>
       <Routes>
         <Route path="/" element={<Home></Home>} />
@@ -23,8 +24,10 @@ function App() {
         />
         <Route path="/edittodo/:todoid" element={<EditTodo></EditTodo>} />
         <Route path="/calender" element={<Calender></Calender>} />
+        <Route path="*" element={<FourOFour></FourOFour>} />
       </Routes>
       <Footer></Footer>
+
       <ToastContainer />
     </div>
   );
