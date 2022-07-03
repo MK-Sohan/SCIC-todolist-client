@@ -50,14 +50,14 @@ const StandardNavMenu = () => {
           <FontAwesomeIcon icon={faDashboard} className=" mr-2" />
           To-Do
         </Link>
-        <Link
+        {/* <Link
           to="/calender"
           className="no-underline px-2 mr-3  text-gray-700 font-bold
             text-xl hover:text-gray-500"
         >
           <FontAwesomeIcon icon={faCalendarCheck} className=" mr-2" />
           Calendar
-        </Link>
+        </Link> */}
       </div>
       <div className="items-center hidden lg:flex  ">
         {/* <Toggle></Toggle> */}
@@ -116,14 +116,14 @@ const StandardNavMenu = () => {
               <FontAwesomeIcon icon={faDashboard} className=" mr-2 mt-6 " />
               To-Do
             </Link>
-            <Link
+            {/* <Link
               to="/calender"
               className="no-underline px-2 mr-3 text-gray-200 font-bold
             text-xl hover:text-white"
             >
               <FontAwesomeIcon icon={faCalendarCheck} className=" mr-2 mt-6 " />
               Calendar
-            </Link>
+            </Link> */}
             <div className="flex">
               <Button
                 className=" text-gray-200 bg-transparent bottom-1 border-gray-200 mt-6 hover:bg-white hover:text-black"

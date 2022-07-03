@@ -9,7 +9,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CompletedTasks from "./componants/CompletedTasks/CompletedTasks";
 import EditTodo from "./componants/EditTodo/EditTodo";
-import Calender from "./componants/calender/Calender";
 import FourOFour from "./componants/FouroFour/FourOFour";
 function App() {
   return (
@@ -23,7 +22,7 @@ function App() {
           element={<CompletedTasks></CompletedTasks>}
         />
         <Route path="/edittodo/:todoid" element={<EditTodo></EditTodo>} />
-        <Route path="/calender" element={<Calender></Calender>} />
+
         <Route path="*" element={<FourOFour></FourOFour>} />
       </Routes>
       <Footer></Footer>

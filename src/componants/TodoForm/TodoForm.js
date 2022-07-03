@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
 import { format } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
@@ -12,15 +11,14 @@ const TodoForm = () => {
   if (selected) {
     footer = <p>You picked {format(selected, "PP")}.</p>;
   }
-  console.log(selected);
+
   const handleSubmit = (e) => {
-    console.log(name, description);
     const info = {
       name: name,
       description: description,
       selecte: format(selected, "PP"),
     };
-    console.log(info);
+
     fetch("https://infinite-spire-80356.herokuapp.com/postTodo", {
       method: "POST",
       body: JSON.stringify(info),
@@ -30,6 +28,8 @@ const TodoForm = () => {
     })
       .then((response) => response.json())
       .then((json) => console.log(json));
+    e.preventDefault();
+    e.target.reset();
   };
   useEffect(() => {
     const listener = (event) => {
@@ -38,6 +38,7 @@ const TodoForm = () => {
 
         handleSubmit();
       }
+      event.target.reset();
     };
     document.addEventListener("keydown", listener);
     return () => {
@@ -82,6 +83,11 @@ const TodoForm = () => {
                     Date: <span className="text-black">{footer}</span>
                   </p>
                 </div>
+                <input
+                  className="bg-green-400 p-2  text-xl rounded-lg w-16 h-10 text-white mt-5 cursor-pointer "
+                  type="submit"
+                  value="Add"
+                />
               </form>
             </div>
           </div>
